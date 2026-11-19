@@ -1,0 +1,1 @@
+import{m as o,w as r,r as m,T as s,a as t}from"./themeClient-D3eXEUgT.js";function i(){o()||(r(m(),document,{isRemembered:!1}),window.addEventListener("storage",a=>{a.key===s&&r(m(),document,{isRemembered:!1})}),window.addEventListener("message",a=>{const e=a.data;e!==null&&typeof e=="object"&&e.type==="shell:theme"&&t(e)}))}export{i as f};

@@ -1,0 +1,20 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-mood="idle"><ns0:title>Imbue</ns0:title><ns0:g transform="translate(50 50) scale(0.4) translate(0.00 -2.42) rotate(5.73)"><ns0:path d="M98.55 0C96.82 11.03 93.62 19.31 89.24 28.99C84.85 38.68 80.44 45.61 74.16 53.88C67.88 62.15 62.42 68.11 54.4 74.88C46.38 81.64 39.49 86.64 29.69 91.38C19.89 96.13 11.34 99.52 0 101.2C-11.34 102.89 -21 103.27 -32.71 100.68C-44.43 98.09 -53.43 94.32 -63.35 87.19C-73.27 80.07 -79.64 72.7 -85.94 62.44C-92.24 52.18 -95.19 43.05 -97.43 31.66C-99.66 20.26 -99.53 11.05 -98.19 0C-96.85 -11.05 -94.23 -19.38 -90.03 -29.25C-85.83 -39.13 -81.4 -46.16 -75.02 -54.5C-68.63 -62.85 -62.96 -68.72 -54.76 -75.37C-46.56 -82.03 -39.58 -86.81 -29.67 -91.32C-19.77 -95.84 -11.27 -98.84 0 -100.32C11.27 -101.81 20.73 -101.96 32.32 -99.49C43.92 -97.02 53 -93.64 63.12 -86.87C73.24 -80.11 80.17 -73.26 86.81 -63.07C93.44 -52.88 96.66 -43.68 98.81 -32.11C100.97 -20.53 100.28 -11.03 98.55 0Z" fill="#F50D00" /></ns0:g><ns0:style>
+.jelly-body {transform-origin:50px 87px;animation:jelly-breathe 3.6s ease-in-out infinite}
+.jelly-eyes {transform-box:fill-box;transform-origin:center;animation:jelly-blink 5.2s infinite}
+.jelly-extra {transform-box:fill-box;transform-origin:center bottom;animation:jelly-sway 3.2s ease-in-out infinite}
+svg[data-mood="working"] .jelly-body,[data-mood="working"] svg .jelly-body {animation:jelly-work 1.3s ease-in-out infinite}
+svg[data-mood="attention"] .jelly-body,[data-mood="attention"] svg .jelly-body {animation:jelly-hop 1.2s ease-in-out infinite}
+@keyframes jelly-breathe {50%{transform:scale(1.035,.965)}}
+@keyframes jelly-blink {0%,91%,97%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}}
+@keyframes jelly-sway {50%{transform:rotate(5deg)}}
+@keyframes jelly-work {0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg) scale(1.02,.98)}}
+@keyframes jelly-hop {0%,65%,100%{transform:translateY(0)}18%{transform:translateY(1px) scale(1.07,.93)}38%{transform:translateY(-9px) scale(.96,1.04)}57%{transform:scale(1.06,.94)}}
+.jelly-listen {display:none}
+svg[data-mood="listening"] .jelly-body,[data-mood="listening"] svg .jelly-body {animation:jelly-listen 4s ease-in-out infinite;transform:translateY(-2px) scale(1.015,1.025)}
+svg[data-mood="listening"] .jelly-eyes,[data-mood="listening"] svg .jelly-eyes {animation:none;transform:translateY(-1px) scale(1.12)}
+svg[data-mood="listening"] .jelly-listen,[data-mood="listening"] svg .jelly-listen {display:inline}
+svg[data-mood="listening"]:has(.jelly-listen) .jelly-eyes,[data-mood="listening"] svg:has(.jelly-listen) .jelly-eyes {display:none}
+svg[data-mood="listening"] .jelly-extra,[data-mood="listening"] svg .jelly-extra {animation:none;transform:translateY(-2px) rotate(-3deg)}
+@keyframes jelly-listen {0%,100%{transform:translateY(-2px) scale(1.015,1.025)}50%{transform:translateY(-3px) scale(1.02,1.03)}}
+@media(prefers-reduced-motion:reduce){.jelly-body,.jelly-eyes,.jelly-extra{animation:none!important}}
+</ns0:style></ns0:svg>

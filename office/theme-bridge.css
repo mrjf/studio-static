@@ -1,0 +1,111 @@
+/* The office apps (Tiny Little Office, system/vendor/tinylittleoffice) drawn from the workspace's design tokens.
+ *
+ * Tiny Little Office builds every colour, font, corner and shadow from its own --to-* tokens, all declared inside
+ * `@layer tokens`. This file is unlayered, so it wins over those declarations in both of the suite's light and dark
+ * modes, and it defines each --to-* from the matching workspace token (--c-*, --font-*, --radius-*). A workspace
+ * theme's bundle (put on the page by theme-bridge.js) defines those tokens; with no theme on the page the fallbacks
+ * are the workspace's standard look (system/libs/workspace_ui/src/base.css), so the apps look like the rest of
+ * Studio either way. */
+:root,
+:root[data-theme="dark"],
+:root[data-theme="light"] {
+  --to-font: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif);
+  --to-font-system: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif);
+  --to-font-mono: var(--font-mono, "SF Mono", "Cascadia Code", ui-monospace, monospace);
+
+  --to-bg: var(--c-bg, #fafaf8);
+  /* The surface an app's work sits on (a sheet, a canvas, a card) is the theme's content well, which a theme with
+     grey chrome (Windows 2000) keeps white; the grey stays for the page band, the bars and the controls. */
+  --to-surface: var(--c-bg-chat, var(--c-surface, #ffffff));
+  --to-surface-2: var(--c-surface-secondary, #f3f2ef);
+  --to-border: var(--c-border-strong, #cfcdc7);
+  --to-border-strong: var(--c-text-faint, #8c8c8c);
+  --to-ink: var(--c-text-primary, #202020);
+  --to-ink-2: var(--c-text-primary, #202020);
+  --to-ink-3: var(--c-text-secondary, #666666);
+  --to-accent: var(--c-accent, #2f6b4f);
+  --to-accent-soft: var(--c-accent-light, #e9f2ee);
+  --to-on-accent: var(--c-text-on-accent, #ffffff);
+  --to-danger: var(--c-danger, #d83a2c);
+  --to-success: var(--c-success, #22a06b);
+  --to-go: var(--c-accent, #2f6b4f);
+  --to-warning: var(--c-warning, #b45309);
+
+  --to-paper: var(--c-bg-chat, var(--c-surface, #ffffff));
+  --to-paper-ink: var(--c-text-primary, #202020);
+  --to-paper-muted: var(--c-text-secondary, #666666);
+  --to-paper-line: var(--c-border-strong, #cfcdc7);
+  --to-paper-shade: var(--c-surface-secondary, #f3f2ef);
+  --to-paper-accent: var(--c-accent, #2f6b4f);
+  --to-placeholder: var(--c-text-faint, #8c8c8c);
+  --to-input-bg: var(--c-bg-composer, var(--c-surface, #ffffff));
+  --to-input-border: var(--c-border-strong, #cfcdc7);
+
+  --to-radius: var(--radius-lg, 8px);
+  --to-radius-sm: var(--radius-md, 6px);
+  /* A pill stays a pill unless the theme's corners are square. */
+  --to-radius-pill: calc(var(--radius-xl, 16px) * 999);
+  --to-shadow: var(--c-shadow-raised, 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1));
+  --to-shadow-pop: var(--c-shadow-overlay, 0 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 8px 2px rgba(0, 0, 0, 0.08));
+  color-scheme: light;
+}
+
+/* A theme draws a dialog's header as a caption bar sized for the workspace's small caption buttons; the suite's close
+   button keeps a finger-sized box, which would stand out of the bar. Under a theme it takes the bar's size. */
+:root[data-ui-theme]:not([data-ui-theme="standard"]) [data-part="dialog-header"] [data-part="button"][data-shape="icon"] {
+  min-width: 0;
+  min-height: 0;
+  width: auto;
+  height: auto;
+  padding: 1px 2px;
+  --i: 1;
+}
+
+/* Sizes: the workspace's, not the suite's. The suite works everything out from the root's font size (a rem; the nav's
+   font size follows it) and a 44px finger's target; the workspace sets body text at 14px (--font-size-body), a button
+   34px high and an icon 16px. The suite draws its normal size at 130% (BASE in kit/ui/zoom.ts, folded into --to-doc
+   and --to-nav), so the root is 14/16 of the browser's default over 1.3 (the suite's own size setting still
+   multiplies it, and the nav's font size, a rem over --to-doc times --to-nav, comes out at 14px too), and with a mouse the target is 34px and an icon 16px. A touch screen keeps the suite's finger-sized
+   targets. */
+html {
+  font-size: calc(87.5% * var(--to-doc, 1.3) / 1.3);
+}
+@media (pointer: fine) {
+  :root {
+    --to-touch: min(2.4286rem, calc(2.4286 * var(--to-nav-font)));
+    --to-header-h: calc(3 * var(--to-nav-font));
+    --to-bar-h: calc(3 * var(--to-nav-font));
+  }
+  :is(
+    to-bar,
+    .to-header,
+    .to-burger,
+    .to-share-btn,
+    .to-drawer,
+    .to-dialog,
+    .to-doc-dialog,
+    to-context,
+    .to-menu,
+    to-link-pop,
+    to-complete,
+    to-find,
+    .to-toast,
+    .to-pinch-pill,
+    .anim-props,
+    .anim-time,
+    .anim-row,
+    .deck-show .ctl,
+    .trip-present-ctl
+  ) {
+    --to-touch: calc(2.4286 * var(--to-nav-font));
+  }
+  .to-doc-dialog-body {
+    --to-touch: min(2.4286rem, calc(2.4286 * var(--to-nav-font)));
+  }
+  /* An icon of the suite's default size (20 of its 16px scale) comes out at the workspace's 16px. */
+  .to-icon,
+  .to-mark {
+    width: calc(var(--i, 1.25) * var(--to-scale) * 0.9143);
+    height: calc(var(--i, 1.25) * var(--to-scale) * 0.9143);
+  }
+}

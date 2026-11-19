@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
+    <meta name="description" content="A small AI assistant that runs entirely in your browser. Nothing you type leaves your device." />
+    <link rel="icon" href="/studio-static/assets/assistant-pQR3CFAc.svg" type="image/svg+xml" />
+    <title>Assistant</title>
+    <script type="module" crossorigin src="/studio-static/assets/assistant-Bgz0kCms.js"></script>
+    <link rel="modulepreload" crossorigin href="/studio-static/assets/profile-Dui7kyL7.js">
+    <link rel="modulepreload" crossorigin href="/studio-static/assets/assistant-Ng5rp6l9.js">
+    <link rel="modulepreload" crossorigin href="/studio-static/assets/themeClient-D3eXEUgT.js">
+    <link rel="modulepreload" crossorigin href="/studio-static/assets/theme-BHW0xVZn.js">
+    <link rel="modulepreload" crossorigin href="/studio-static/assets/purify.es-jLCuLCx5.js">
+    <link rel="stylesheet" crossorigin href="/studio-static/assets/assistant-CBr9HQny.css">
+    <script>(function () {
+  try {
+    var stored = JSON.parse(window.localStorage.getItem("workspace-theme") || "null");
+    if (!stored || typeof stored.id !== "string" || !/^[a-z0-9][a-z0-9-]{0,47}$/.test(stored.id)) return;
+    if (stored.id === "standard") return;
+    var revision = typeof stored.revision === "string" ? stored.revision : "";
+    var root = document.documentElement;
+    root.setAttribute("data-ui-theme", stored.id);
+    root.setAttribute("data-ui-theme-revision", revision);
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.setAttribute("blocking", "render");
+    link.setAttribute("data-workspace-theme", stored.id);
+    link.href = "/studio-static/_static/themes/" + encodeURIComponent(stored.id) + "/theme.css" +
+      (revision ? "?v=" + encodeURIComponent(revision) : "");
+    link.onerror = function () { link.remove(); };
+    document.head.appendChild(link);
+  } catch (error) {
+    // A broken memory of a theme leaves the page in the standard look until the shell names one.
+  }
+})();</script>
+  </head>
+  <body class="app-body">
+    <div id="app"></div>
+  </body>
+</html>

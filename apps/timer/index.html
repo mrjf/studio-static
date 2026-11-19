@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/studio-static/assets/timer-BUMaPHBX.svg" type="image/svg+xml" />
+    <title>Focus Timer</title>
+    <script type="module" crossorigin src="/studio-static/assets/timer-BR6n1Ny_.js"></script>
+    <link rel="modulepreload" crossorigin href="/studio-static/assets/profile-Dui7kyL7.js">
+    <link rel="modulepreload" crossorigin href="/studio-static/assets/common-30sLvxqm.js">
+    <link rel="stylesheet" crossorigin href="/studio-static/assets/common-BMq9oK73.css">
+    <script>(function () {
+  try {
+    var stored = JSON.parse(window.localStorage.getItem("workspace-theme") || "null");
+    if (!stored || typeof stored.id !== "string" || !/^[a-z0-9][a-z0-9-]{0,47}$/.test(stored.id)) return;
+    if (stored.id === "standard") return;
+    var revision = typeof stored.revision === "string" ? stored.revision : "";
+    var root = document.documentElement;
+    root.setAttribute("data-ui-theme", stored.id);
+    root.setAttribute("data-ui-theme-revision", revision);
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.setAttribute("blocking", "render");
+    link.setAttribute("data-workspace-theme", stored.id);
+    link.href = "/studio-static/_static/themes/" + encodeURIComponent(stored.id) + "/theme.css" +
+      (revision ? "?v=" + encodeURIComponent(revision) : "");
+    link.onerror = function () { link.remove(); };
+    document.head.appendChild(link);
+  } catch (error) {
+    // A broken memory of a theme leaves the page in the standard look until the shell names one.
+  }
+})();</script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mrjf.github.io/studio-static/office/sitemap.xml

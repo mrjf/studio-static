@@ -1,0 +1,156 @@
+{
+  "default": null,
+  "themes": [
+    {
+      "available": true,
+      "base": null,
+      "chrome": {
+        "leading": [
+          "menu",
+          "refresh",
+          "icon",
+          "title"
+        ],
+        "title_align": "center",
+        "trailing": [
+          "minimize",
+          "maximize",
+          "close"
+        ]
+      },
+      "description": "The workspace's own look: warm neutrals, a green accent, and hand-drawn two-color icon tiles.",
+      "icons": {
+        "apps": {},
+        "background": "transparent",
+        "derive": "none",
+        "fallback_url": null,
+        "format": "svg",
+        "max_colors": null,
+        "palette": [],
+        "rendering": "smooth",
+        "size": 216
+      },
+      "id": "standard",
+      "name": "Standard",
+      "problems": [],
+      "revision": "d42272eabb1e938c",
+      "source": "builtin"
+    },
+    {
+      "available": true,
+      "base": "standard",
+      "chrome": {
+        "leading": [
+          "close",
+          "refresh",
+          "menu",
+          "title"
+        ],
+        "title_align": "center",
+        "trailing": [
+          "minimize",
+          "maximize"
+        ]
+      },
+      "description": "Black-and-white Macintosh System 6 and 7: pinstriped title bars, rounded buttons, a one-pixel gray desktop, on system.css.",
+      "icons": {
+        "apps": {
+          "chat": "/studio-static/_static/theme-icons/mac-classic/icons/chat.png",
+          "datalib": "/studio-static/_static/theme-icons/mac-classic/icons/datalib.png",
+          "files": "/studio-static/_static/theme-icons/mac-classic/icons/files.png",
+          "getting-started": "/studio-static/_static/theme-icons/mac-classic/icons/getting-started.png",
+          "routines": "/studio-static/_static/theme-icons/mac-classic/icons/routines.png",
+          "screen": "/studio-static/_static/theme-icons/mac-classic/icons/screen.png",
+          "style-guide": "/studio-static/_static/theme-icons/mac-classic/icons/style-guide.png",
+          "system-monitor": "/studio-static/_static/theme-icons/mac-classic/icons/system-monitor.png",
+          "terminal": "/studio-static/_static/theme-icons/mac-classic/icons/terminal.png",
+          "assistant": "/studio-static/theme-icons/mac-classic/assistant.png",
+          "mail": "/studio-static/theme-icons/mac-classic/mail.png",
+          "office-anim": "/studio-static/theme-icons/mac-classic/office-anim.png",
+          "office-cal": "/studio-static/theme-icons/mac-classic/office-cal.png",
+          "office-calc": "/studio-static/theme-icons/mac-classic/office-calc.png",
+          "office-deck": "/studio-static/theme-icons/mac-classic/office-deck.png",
+          "office-diagram": "/studio-static/theme-icons/mac-classic/office-diagram.png",
+          "office-draw": "/studio-static/theme-icons/mac-classic/office-draw.png",
+          "office-outline": "/studio-static/theme-icons/mac-classic/office-outline.png",
+          "office-sheet": "/studio-static/theme-icons/mac-classic/office-sheet.png",
+          "office-trip": "/studio-static/theme-icons/mac-classic/office-trip.png",
+          "office-write": "/studio-static/theme-icons/mac-classic/office-write.png"
+        },
+        "background": "transparent",
+        "derive": "monochrome",
+        "fallback_url": "/studio-static/_static/theme-icons/mac-classic/icons/app.png",
+        "format": "png",
+        "max_colors": null,
+        "palette": [
+          "#000000",
+          "#ffffff"
+        ],
+        "rendering": "pixelated",
+        "size": 32
+      },
+      "id": "mac-classic",
+      "name": "Classic Mac",
+      "problems": [],
+      "revision": "a96ac657c11b0a9c",
+      "source": "builtin"
+    },
+    {
+      "available": true,
+      "base": "standard",
+      "chrome": {
+        "leading": [
+          "icon",
+          "title",
+          "refresh",
+          "menu"
+        ],
+        "title_align": "start",
+        "trailing": [
+          "minimize",
+          "maximize",
+          "close"
+        ]
+      },
+      "description": "Beveled gray windows with the navy caption gradient, Tahoma type, and a blue desktop, on win95.css.",
+      "icons": {
+        "apps": {
+          "chat": "/studio-static/_static/theme-icons/windows-2000/icons/chat.png",
+          "datalib": "/studio-static/_static/theme-icons/windows-2000/icons/datalib.png",
+          "files": "/studio-static/_static/theme-icons/windows-2000/icons/files.png",
+          "getting-started": "/studio-static/_static/theme-icons/windows-2000/icons/getting-started.png",
+          "routines": "/studio-static/_static/theme-icons/windows-2000/icons/routines.png",
+          "screen": "/studio-static/_static/theme-icons/windows-2000/icons/screen.png",
+          "style-guide": "/studio-static/_static/theme-icons/windows-2000/icons/style-guide.png",
+          "system-monitor": "/studio-static/_static/theme-icons/windows-2000/icons/system-monitor.png",
+          "terminal": "/studio-static/_static/theme-icons/windows-2000/icons/terminal.png",
+          "assistant": "/studio-static/theme-icons/windows-2000/assistant.png",
+          "mail": "/studio-static/theme-icons/windows-2000/mail.png",
+          "office-anim": "/studio-static/theme-icons/windows-2000/office-anim.png",
+          "office-cal": "/studio-static/theme-icons/windows-2000/office-cal.png",
+          "office-calc": "/studio-static/theme-icons/windows-2000/office-calc.png",
+          "office-deck": "/studio-static/theme-icons/windows-2000/office-deck.png",
+          "office-diagram": "/studio-static/theme-icons/windows-2000/office-diagram.png",
+          "office-draw": "/studio-static/theme-icons/windows-2000/office-draw.png",
+          "office-outline": "/studio-static/theme-icons/windows-2000/office-outline.png",
+          "office-sheet": "/studio-static/theme-icons/windows-2000/office-sheet.png",
+          "office-trip": "/studio-static/theme-icons/windows-2000/office-trip.png",
+          "office-write": "/studio-static/theme-icons/windows-2000/office-write.png"
+        },
+        "background": "transparent",
+        "derive": "quantize",
+        "fallback_url": "/studio-static/_static/theme-icons/windows-2000/icons/app.png",
+        "format": "png",
+        "max_colors": 48,
+        "palette": [],
+        "rendering": "pixelated",
+        "size": 32
+      },
+      "id": "windows-2000",
+      "name": "Windows 2000",
+      "problems": [],
+      "revision": "6b0c279ab5db8ffc",
+      "source": "builtin"
+    }
+  ]
+}
